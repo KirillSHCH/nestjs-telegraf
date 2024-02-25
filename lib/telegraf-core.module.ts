@@ -117,7 +117,9 @@ export class TelegrafCoreModule implements OnApplicationShutdown {
 
   async onApplicationShutdown(): Promise<void> {
     const bot = this.moduleRef.get<any>(this.botName);
-    bot && (await bot.stop().catch((e: unknown) => console.log(e)));
+    try {
+      bot.stop();
+    } catch {}
   }
 
   private static createAsyncProviders(
