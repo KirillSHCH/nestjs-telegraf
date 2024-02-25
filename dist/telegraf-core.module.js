@@ -96,7 +96,10 @@ let TelegrafCoreModule = TelegrafCoreModule_1 = class TelegrafCoreModule {
     }
     async onApplicationShutdown() {
         const bot = this.moduleRef.get(this.botName);
-        bot && (await bot.stop().catch((e) => console.log(e)));
+        try {
+            bot.stop();
+        }
+        catch (_a) { }
     }
     static createAsyncProviders(options) {
         if (options.useExisting || options.useFactory) {
