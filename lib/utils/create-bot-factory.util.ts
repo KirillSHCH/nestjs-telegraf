@@ -10,6 +10,7 @@ export async function createBotFactory(
 
   if (options.launchOptions !== false) {
     bot.launch(options.launchOptions).catch(() => {
+      console.log('Ошибка при попытке запуска телеграм бота');
       return;
     });
   }

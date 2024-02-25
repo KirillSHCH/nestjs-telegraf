@@ -99,7 +99,9 @@ let TelegrafCoreModule = TelegrafCoreModule_1 = class TelegrafCoreModule {
         try {
             bot.stop();
         }
-        catch (_a) { }
+        catch (_a) {
+            console.log('Ошибка при попытке остановки телеграм бота');
+        }
     }
     static createAsyncProviders(options) {
         if (options.useExisting || options.useFactory) {

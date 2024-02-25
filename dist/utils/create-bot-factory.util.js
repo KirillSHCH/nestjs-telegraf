@@ -8,6 +8,7 @@ async function createBotFactory(options) {
     bot.use(...((_a = options.middlewares) !== null && _a !== void 0 ? _a : []));
     if (options.launchOptions !== false) {
         bot.launch(options.launchOptions).catch(() => {
+            console.log('Ошибка при попытке запуска телеграм бота');
             return;
         });
     }

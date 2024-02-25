@@ -119,7 +119,9 @@ export class TelegrafCoreModule implements OnApplicationShutdown {
     const bot = this.moduleRef.get<any>(this.botName);
     try {
       bot.stop();
-    } catch {}
+    } catch {
+      console.log('Ошибка при попытке остановки телеграм бота');
+    }
   }
 
   private static createAsyncProviders(
