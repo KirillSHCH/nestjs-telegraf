@@ -15,9 +15,6 @@ npm-debug.log
 /coverage
 /.nyc_output
 
-# source
-dist
-
 # docs
 .vitepress/cache
 .vitepress/dist
